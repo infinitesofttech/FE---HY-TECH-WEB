@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+Sitemap: https://fe-hy-tech-web.vercel.app/sitemap.xml

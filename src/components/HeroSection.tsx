@@ -1,16 +1,15 @@
 "use client";
 
 import React, { useState } from "react";
-import { useLanguage } from "@/context/LanguageContext";
 import { CONTACT_INFO, STATS } from "@/data/servicesData";
-import { Search, ShieldCheck, Zap, HeartHandshake, Smile, ChevronRight, GraduationCap, CheckCircle2, PhoneCall, Sparkles } from "lucide-react";
+import { Search, ShieldCheck, Zap, HeartHandshake, Smile, ChevronRight, GraduationCap, CheckCircle2, PhoneCall, Sparkles, Star, Users } from "lucide-react";
+import { motion } from "framer-motion";
 
 interface HeroSectionProps {
   onSearch: (query: string) => void;
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
-  const { t } = useLanguage();
   const [searchQuery, setSearchQuery] = useState("");
 
   const handleSearchSubmit = (e: React.FormEvent) => {
@@ -25,103 +24,150 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
   };
 
   const quickBadges = [
-    { icon: Zap, textGu: "ઝડપી સેવા", textEn: "Fast Service", color: "text-amber-500 bg-amber-50 border-amber-200" },
-    { icon: ShieldCheck, textGu: "વિશ્વસનીય સેવા", textEn: "100% Reliable", color: "text-blue-600 bg-blue-50 border-blue-200" },
-    { icon: HeartHandshake, textGu: "ઉચિત દરે સેવા", textEn: "Affordable Rates", color: "text-emerald-600 bg-emerald-50 border-emerald-200" },
-    { icon: Smile, textGu: "ગ્રાહક સંતોષ પ્રાથમિકતા", textEn: "Customer Satisfaction First", color: "text-purple-600 bg-purple-50 border-purple-200" },
+    { icon: Zap, text: "Fast Service", color: "text-[#FF5A00] bg-[#FFF0E6] border-[#FFD8C2]" },
+    { icon: ShieldCheck, text: "100% Reliable", color: "text-blue-700 bg-blue-50 border-blue-200" },
+    { icon: HeartHandshake, text: "Affordable Rates", color: "text-emerald-700 bg-emerald-50 border-emerald-200" },
+    { icon: Smile, text: "Customer First", color: "text-purple-700 bg-purple-50 border-purple-200" },
   ];
 
   return (
-    <section id="hero" className="relative pt-28 pb-16 md:pt-36 md:pb-24 bg-gradient-to-b from-navy-950 via-navy-900 to-slate-900 text-white overflow-hidden">
-      {/* Dynamic Background Decorative Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-500/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-amber-500/10 rounded-full blur-2xl pointer-events-none" />
+    <section id="hero" className="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#FAF5ED] text-[#0B132B] overflow-hidden">
+      {/* Veeba Soft Warm Ambient Background Glows */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-[#FF5A00]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Column: Hero Text & Search */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-            
-            {/* Tagline Pill */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/20 border border-brand-500/40 text-brand-300 text-xs font-semibold backdrop-blur-md">
-              <Sparkles className="w-4 h-4 text-amber-400 animate-pulse" />
-              <span>{t("ધરમપુરનું નંબર-૧ ડિજિટલ સેવા & કમ્પ્યુટર કેન્દ્ર", "Dharampur's #1 Digital Service & Computer Center")}</span>
-            </div>
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="lg:col-span-7 space-y-6 text-center lg:text-left"
+          >
+            {/* Veeba Coral Pill Tagline */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FFF0E6] border border-[#FFD8C2] text-[#FF5A00] text-xs font-extrabold shadow-sm"
+            >
+              <Sparkles className="w-4 h-4 text-[#FF5A00] animate-pulse" />
+              <span>Dharampur&apos;s #1 Digital Service & Computer Education Hub</span>
+            </motion.div>
 
-            {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
-              <span className="block text-white">HY-TECH</span>
-              <span className="block text-gradient-orange mt-1">
-                {t("તમામ ઓનલાઈન અને કમ્પ્યુટર સેવાઓ એક જ સ્થળે", "All Online & Computer Services Under One Roof")}
+            {/* Headline */}
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-[#0B132B]">
+              <span className="block">HY-TECH</span>
+              <span className="block text-[#FF5A00] mt-1">
+                All Online Services & Computer Education Under One Roof
               </span>
             </h1>
 
             {/* Subheading */}
-            <p className="text-slate-300 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
-              {t(
-                "આધાર અપડેટ, પાન કાર્ડ, ચૂંટણી કાર્ડ, આયુષ્માન ભારત, શ્રી વનરાજ કોલેજ એડમિશન ફોર્મ્સ, નોકરી ફોર્મ્સ તથા સીસીસી અને ટેલી કમ્પ્યુટર ક્લાસીસ.",
-                "Aadhaar updates, PAN card, Voter ID, Ayushman Bharat, Vanraj College Dharampur forms, Job applications, and CCC/Tally Computer Courses."
-              )}
+            <p className="text-slate-600 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-medium leading-relaxed">
+              Aadhaar updates, PAN card, Voter ID, Ayushman Bharat, Shree Vanraj College Dharampur forms, Job applications, and CCC/Tally Computer Courses.
             </p>
 
-            {/* Search Bar */}
+            {/* Veeba Floating Search Pill */}
             <form onSubmit={handleSearchSubmit} className="max-w-xl mx-auto lg:mx-0 relative">
-              <div className="relative flex items-center shadow-glow-navy">
-                <Search className="absolute left-4 w-5 h-5 text-slate-400" />
+              <div className="relative flex items-center bg-white rounded-full p-2 border border-[#F0E6D8] shadow-lg">
+                <Search className="ml-4 w-5 h-5 text-[#FF5A00]" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder={t("કોઈપણ સેવા અથવા કમ્પ્યુટર કોર્સ શોધો (દા.ત. આધાર, પાન, CCC)...", "Search any service or computer course (e.g. Aadhaar, PAN, CCC)...")}
-                  className="w-full pl-12 pr-28 py-3.5 bg-slate-900/90 border border-slate-700/80 rounded-2xl text-white placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-all shadow-inner"
+                  placeholder="Search any service or course (e.g. Aadhaar, PAN, CCC)..."
+                  className="w-full pl-3 pr-28 py-3 bg-transparent text-[#0B132B] placeholder-slate-400 text-sm font-medium focus:outline-none"
                 />
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                   type="submit"
-                  className="absolute right-1.5 top-1.5 bottom-1.5 px-4 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-xl text-xs flex items-center gap-1 transition-all shadow-md hover:scale-105"
+                  className="px-6 py-3 bg-[#FF5A00] hover:bg-[#E04F00] text-white font-extrabold rounded-full text-xs flex items-center gap-1.5 transition-all shadow-md shrink-0"
                 >
-                  <span>{t("શોધો", "Search")}</span>
+                  <span>Search</span>
                   <ChevronRight className="w-4 h-4" />
-                </button>
+                </motion.button>
               </div>
             </form>
 
-            {/* CTA Buttons */}
+            {/* Veeba Action Buttons */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
-              <a
+              <motion.a
+                whileHover={{ scale: 1.04, y: -2 }}
+                whileTap={{ scale: 0.96 }}
                 href="#services"
-                className="px-6 py-3.5 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-xl shadow-glow-orange text-sm flex items-center gap-2 transition-all hover:-translate-y-0.5"
+                className="px-8 py-4 bg-[#FF5A00] hover:bg-[#E04F00] text-white font-extrabold rounded-full shadow-lg text-sm flex items-center gap-2 transition-all shadow-[#FF5A00]/25"
               >
-                <span>{t("તમામ સેવાઓ જુઓ", "Explore All Services")}</span>
+                <span>Explore All Services</span>
                 <ChevronRight className="w-4 h-4" />
-              </a>
+              </motion.a>
 
-              <a
+              <motion.a
+                whileHover={{ scale: 1.04, y: -2 }}
+                whileTap={{ scale: 0.96 }}
                 href={`tel:${CONTACT_INFO.phone.replace(/\s+/g, '')}`}
-                className="px-6 py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold rounded-xl text-sm flex items-center gap-2 transition-all"
+                className="px-7 py-4 bg-white hover:bg-[#FFF0E6] border border-[#F0E6D8] text-[#0B132B] font-bold rounded-full text-sm flex items-center gap-2 transition-all shadow-sm"
               >
-                <PhoneCall className="w-4 h-4 text-amber-400" />
-                <span>{t("અત્યારે જ કૉલ કરો", "Call Now: " + CONTACT_INFO.displayPhone)}</span>
-              </a>
+                <PhoneCall className="w-4 h-4 text-[#FF5A00]" />
+                <span>Call Now: {CONTACT_INFO.displayPhone}</span>
+              </motion.a>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Right Column: Visual Showcase Card matching Banner Image 2 */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl bg-gradient-to-b from-navy-800/90 to-navy-900/90 border border-slate-700/60 p-6 md:p-8 shadow-2xl backdrop-blur-xl">
+          {/* Right Column: Veeba Card with Floating Badges */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            className="lg:col-span-5 relative"
+          >
+            {/* Edunex Floating Badge 1: Rating Pill */}
+            <motion.div
+              animate={{ y: [0, -6, 0] }}
+              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+              className="absolute -top-6 -right-4 z-20 bg-white text-[#0B132B] px-4 py-2.5 rounded-full shadow-xl border border-[#F0E6D8] flex items-center gap-2.5"
+            >
+              <div className="p-1.5 rounded-full bg-amber-100 text-amber-600">
+                <Star className="w-4 h-4 fill-amber-500 text-amber-500" />
+              </div>
+              <div>
+                <p className="text-xs font-extrabold leading-none">4.9 / 5.0 Rating</p>
+                <p className="text-[10px] text-slate-500 mt-0.5">120+ Verified Reviews</p>
+              </div>
+            </motion.div>
+
+            {/* Edunex Floating Badge 2: Student Count Pill */}
+            <motion.div
+              animate={{ y: [0, 6, 0] }}
+              transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 1 }}
+              className="absolute -bottom-6 -left-6 z-20 bg-[#0B132B] text-white px-5 py-3 rounded-full shadow-xl border border-[#0B132B] flex items-center gap-3"
+            >
+              <div className="p-2 rounded-full bg-[#FF5A00] text-white">
+                <Users className="w-4 h-4" />
+              </div>
+              <div>
+                <p className="text-xs font-extrabold leading-none">1,200+ Students</p>
+                <p className="text-[10px] text-[#FFD8C2] mt-0.5">Trained in Dharampur</p>
+              </div>
+            </motion.div>
+
+            {/* Veeba Main Visual Card (32px Curves) */}
+            <div className="relative rounded-[32px] bg-white border border-[#F0E6D8] p-7 md:p-9 shadow-2xl">
               
-              {/* Header inside visual card */}
-              <div className="flex items-center justify-between border-b border-slate-700/60 pb-4 mb-6">
+              <div className="flex items-center justify-between border-b border-[#F0E6D8] pb-4 mb-6">
                 <div>
-                  <h3 className="text-xl font-bold text-white flex items-center gap-2">
-                    <GraduationCap className="w-6 h-6 text-brand-500" />
+                  <h3 className="text-xl font-black text-[#0B132B] flex items-center gap-2">
+                    <GraduationCap className="w-6 h-6 text-[#FF5A00]" />
                     <span>HY-TECH COMPUTER HUB</span>
                   </h3>
-                  <p className="text-xs text-amber-400 font-medium">
-                    {t("ધરમપુર ઓનલાઈન કમ્પ્યુટર સેવા કેન્દ્ર", "Dharampur Digital & Education Hub")}
+                  <p className="text-xs text-[#FF5A00] font-extrabold mt-0.5">
+                    Dharampur Digital & Education Hub
                   </p>
                 </div>
-                <span className="px-3 py-1 bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-bold rounded-full animate-pulse">
+                <span className="px-3.5 py-1 bg-emerald-100 border border-emerald-300 text-emerald-800 text-[11px] font-extrabold rounded-full animate-pulse">
                   OPEN NOW
                 </span>
               </div>
@@ -129,72 +175,80 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
               {/* Service Highlights Checklist */}
               <div className="space-y-3">
                 {[
-                  { titleGu: "આધાર કાર્ડ & બાયોમેટ્રિક અપડેટ ગાઈડન્સ", titleEn: "Aadhaar Card & Biometric Guidance" },
-                  { titleGu: "શ્રી વનરાજ આર્ટ્સ અને કોમર્સ કોલેજ ફોર્મ્સ", titleEn: "Shree Vanraj College Dharampur Forms" },
-                  { titleGu: "GCAS રજિસ્ટ્રેશન & સ્કોલરશીપ ફોર્મ્સ", titleEn: "GCAS Portal & Scholarship Applications" },
-                  { titleGu: "સરકારી નોકરી અને ઓજાસ (OJAS) ભરતીઓ", titleEn: "Government Jobs & OJAS Recruitment" },
-                  { titleGu: "CCC & Tally Prime કમ્પ્યુટર ક્લાસીસ", titleEn: "CCC & Tally Prime Computer Classes" },
-                  { titleGu: "પાસપોર્ટ ફોટો અને પીવીસી સ્માર્ટ કાર્ડ", titleEn: "Passport Photos & PVC Smart Card Print" },
+                  "Aadhaar Card & Biometric Guidance",
+                  "Shree Vanraj College Dharampur Forms",
+                  "GCAS Portal & Scholarship Applications",
+                  "Government Jobs & OJAS Recruitment",
+                  "CCC & Tally Prime Computer Classes",
+                  "Passport Photos & PVC Smart Card Print",
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center gap-3 p-2.5 rounded-xl bg-slate-800/60 border border-slate-700/40 hover:border-brand-500/50 transition-colors">
-                    <CheckCircle2 className="w-5 h-5 text-brand-500 shrink-0" />
-                    <span className="text-sm font-medium text-slate-200">
-                      {t(item.titleGu, item.titleEn)}
+                  <motion.div
+                    key={idx}
+                    whileHover={{ x: 5 }}
+                    className="flex items-center gap-3 p-3 rounded-2xl bg-[#FAF5ED] border border-[#F0E6D8] hover:border-[#FF5A00]/40 transition-colors"
+                  >
+                    <CheckCircle2 className="w-5 h-5 text-[#FF5A00] shrink-0" />
+                    <span className="text-xs sm:text-sm font-bold text-[#0B132B]">
+                      {item}
                     </span>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
 
-              {/* Contact Pill at bottom of card */}
-              <div className="mt-6 pt-4 border-t border-slate-700/60 flex items-center justify-between text-xs text-slate-300">
+              {/* Contact Info Footer */}
+              <div className="mt-6 pt-4 border-t border-[#F0E6D8] flex items-center justify-between text-xs">
                 <div>
-                  <p className="font-semibold text-white">{CONTACT_INFO.contactPerson}</p>
-                  <p className="text-slate-400">{t("સંચાલક / ઓનર", "Proprietor")}</p>
+                  <p className="font-extrabold text-[#0B132B]">{CONTACT_INFO.contactPerson}</p>
+                  <p className="text-slate-500">Proprietor</p>
                 </div>
                 <a
                   href={`tel:${CONTACT_INFO.phone.replace(/\s+/g, '')}`}
-                  className="font-mono text-base font-extrabold text-amber-400 hover:underline"
+                  className="font-mono text-base font-black text-[#FF5A00] hover:underline"
                 >
                   {CONTACT_INFO.displayPhone}
                 </a>
               </div>
             </div>
-          </div>
+          </motion.div>
 
         </div>
 
-        {/* Four Trust Badges matching Image 2 Footer */}
+        {/* Four Trust Badges matching Veeba Pastel Pill Cards */}
         <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4">
           {quickBadges.map((badge, idx) => {
             const IconComp = badge.icon;
             return (
-              <div
+              <motion.div
                 key={idx}
-                className="flex items-center gap-3 p-4 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-md hover:border-brand-500/40 transition-all hover:scale-[1.02]"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * idx + 0.3 }}
+                whileHover={{ scale: 1.03, y: -2 }}
+                className="flex items-center gap-3.5 p-4 rounded-3xl bg-white border border-[#F0E6D8] shadow-sm hover:shadow-md transition-all"
               >
-                <div className={`p-2.5 rounded-xl ${badge.color} border shrink-0`}>
+                <div className={`p-3 rounded-2xl ${badge.color} border shrink-0`}>
                   <IconComp className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs sm:text-sm font-bold text-white">
-                    {t(badge.textGu, badge.textEn)}
+                  <h4 className="text-xs sm:text-sm font-extrabold text-[#0B132B]">
+                    {badge.text}
                   </h4>
-                  <p className="text-[11px] text-slate-400">HY-TECH {t("ગેરંટી", "Guarantee")}</p>
+                  <p className="text-[11px] text-slate-500 font-medium">HY-TECH Guarantee</p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
 
         {/* Stats Counter Bar */}
-        <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-slate-800/80 text-center">
+        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-[#F0E6D8] text-center">
           {STATS.map((stat, idx) => (
             <div key={idx} className="space-y-1">
-              <div className="text-2xl sm:text-3xl font-extrabold text-gradient-orange">
+              <div className="text-3xl sm:text-4xl font-black text-[#FF5A00]">
                 {stat.value}
               </div>
-              <div className="text-xs font-medium text-slate-400">
-                {t(stat.labelGu, stat.labelEn)}
+              <div className="text-xs font-extrabold text-[#0B132B] uppercase tracking-wider">
+                {stat.labelEn}
               </div>
             </div>
           ))}
@@ -204,3 +258,4 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
     </section>
   );
 };
+

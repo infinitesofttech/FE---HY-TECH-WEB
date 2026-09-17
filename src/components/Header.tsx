@@ -1,12 +1,14 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useLanguage } from "@/context/LanguageContext";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { CONTACT_INFO } from "@/data/servicesData";
 import { Phone, MapPin, Menu, X, MessageSquare, Clock } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export const Header: React.FC = () => {
-  const { t } = useLanguage();
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -19,149 +21,180 @@ export const Header: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { href: "#hero", labelGu: "Home", labelEn: "Home" },
-    { href: "#services", labelGu: "All Services", labelEn: "All Services" },
-    { href: "#courses", labelGu: "Computer Courses", labelEn: "Computer Courses" },
-    { href: "#college", labelGu: "College Forms", labelEn: "College Forms" },
-    { href: "#documents", labelGu: "Doc Helper", labelEn: "Doc Helper" },
-    { href: "#contact", labelGu: "Contact Us", labelEn: "Contact Us" },
+    { href: "/", label: "Home" },
+    { href: "/services", label: "All Services" },
+    { href: "/courses", label: "Computer Courses" },
+    { href: "/college-forms", label: "College Forms" },
+    { href: "/doc-helper", label: "Doc Helper" },
+    { href: "/contact", label: "Contact Us" },
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      {/* Top Banner Bar */}
-      <div className="bg-navy-950 text-slate-200 py-1.5 px-4 text-xs font-medium border-b border-navy-800/50">
+    <motion.header
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className="fixed top-0 left-0 right-0 z-50 pointer-events-none"
+    >
+      {/* Top Banner Bar (Veeba Coral Bar) */}
+      <div className="bg-[#FF5A00] text-white py-1.5 px-4 text-xs font-medium pointer-events-auto border-b border-[#E04F00]/40">
         <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
           <div className="flex items-center gap-4 flex-wrap">
-            <span className="flex items-center gap-1.5 text-amber-400">
-              <MapPin className="w-3.5 h-3.5 text-brand-500" />
-              <span>{t(CONTACT_INFO.addressGu, CONTACT_INFO.addressEn)}</span>
+            <span className="flex items-center gap-1.5 text-white/95">
+              <MapPin className="w-3.5 h-3.5 text-amber-200" />
+              <span>{CONTACT_INFO.addressEn}</span>
             </span>
-            <span className="hidden md:flex items-center gap-1.5 text-slate-300">
-              <Clock className="w-3.5 h-3.5 text-amber-400" />
-              <span>{t(CONTACT_INFO.workingHoursGu, CONTACT_INFO.workingHoursEn)}</span>
+            <span className="hidden md:flex items-center gap-1.5 text-white/90">
+              <Clock className="w-3.5 h-3.5 text-amber-200" />
+              <span>{CONTACT_INFO.workingHoursEn}</span>
             </span>
           </div>
 
           <div className="flex items-center gap-3 ml-auto">
             <a
               href={`tel:${CONTACT_INFO.phone.replace(/\s+/g, '')}`}
-              className="flex items-center gap-1.5 hover:text-brand-400 transition-colors font-semibold text-white"
+              className="flex items-center gap-1.5 hover:underline font-bold text-white"
             >
-              <Phone className="w-3.5 h-3.5 text-brand-500" />
+              <Phone className="w-3.5 h-3.5" />
               <span>{CONTACT_INFO.displayPhone}</span>
             </a>
           </div>
         </div>
       </div>
 
-      {/* Main Navbar */}
-      <nav
-        className={`transition-all duration-300 ${
-          isScrolled
-            ? "bg-white/95 backdrop-blur-md shadow-lg py-2 border-b border-slate-200/80"
-            : "bg-white/90 backdrop-blur-sm py-2.5 border-b border-slate-100"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          
-          {/* Official Logo Image from User */}
-          <a href="#hero" className="flex items-center gap-3 group">
-            <div className="relative p-1 rounded-xl bg-white shadow-sm border border-slate-100 group-hover:scale-105 transition-transform duration-300">
+      {/* Veeba Floating Pill Navigation Bar */}
+      <div className="max-w-6xl mx-auto px-4 mt-3 pointer-events-auto">
+        <motion.nav
+          animate={{
+            scale: isScrolled ? 0.98 : 1,
+            boxShadow: isScrolled
+              ? "0 20px 30px -10px rgba(0, 0, 0, 0.15)"
+              : "0 10px 25px -5px rgba(0, 0, 0, 0.08)",
+          }}
+          transition={{ duration: 0.2 }}
+          className="bg-white/95 backdrop-blur-md rounded-full border border-[#F0E6D8] px-5 py-2.5 flex items-center justify-between transition-all"
+        >
+          {/* Official Logo Image */}
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="relative p-1 rounded-full bg-[#FFF0E6] border border-[#FFD8C2]">
               <img
                 src="/logo.png"
-                alt="HY-TECH Computer Education & Online Hub"
-                className="h-12 w-auto object-contain"
+                alt="HY-TECH Computer Education & Online Hub Logo Dharampur"
+                className="h-9 w-auto object-contain transition-transform group-hover:scale-105"
               />
             </div>
             <div>
               <div className="flex items-center gap-1.5">
-                <span className="text-xl font-black tracking-tight text-navy-950">
+                <span className="text-lg font-black tracking-tight text-[#0B132B]">
                   HY-TECH
                 </span>
-                <span className="text-[10px] bg-brand-100 text-brand-800 font-extrabold px-1.5 py-0.5 rounded border border-brand-200">
+                <span className="text-[10px] bg-[#FF5A00] text-white font-extrabold px-2 py-0.5 rounded-full shadow-xs">
                   Dharampur
                 </span>
               </div>
-              <p className="text-[10px] font-extrabold text-brand-600 tracking-wide uppercase leading-none mt-0.5">
+              <p className="text-[9px] font-extrabold text-[#FF5A00] tracking-wide uppercase leading-none mt-0.5">
                 Computer Education & Online Hub
               </p>
             </div>
-          </a>
+          </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-6">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-slate-700 hover:text-brand-600 font-semibold text-sm transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-brand-500 hover:after:w-full after:transition-all"
-              >
-                {t(link.labelGu, link.labelEn)}
-              </a>
-            ))}
+          {/* Desktop Multi-Page Navigation */}
+          <div className="hidden lg:flex items-center gap-1.5 bg-[#FAF5ED] p-1.5 rounded-full border border-[#F0E6D8]">
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`relative font-extrabold text-xs px-4 py-2 rounded-full transition-all ${
+                    isActive
+                      ? "bg-[#FF5A00] text-white shadow-md shadow-[#FF5A00]/30"
+                      : "text-slate-700 hover:text-[#FF5A00] hover:bg-white"
+                  }`}
+                >
+                  <span>{link.label}</span>
+                </Link>
+              );
+            })}
           </div>
 
-          {/* Quick CTA Actions */}
+          {/* Quick CTA Action */}
           <div className="hidden md:flex items-center gap-3">
-            <a
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               href={`https://wa.me/${CONTACT_INFO.whatsappNumber}?text=${encodeURIComponent("Hello HY-TECH, I would like to inquire about your services.")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold px-4 py-2 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 text-xs"
+              className="flex items-center gap-2 bg-[#FF5A00] hover:bg-[#E04F00] text-white font-extrabold px-5 py-2.5 rounded-full shadow-md text-xs transition-all"
             >
               <MessageSquare className="w-4 h-4" />
               <span>WhatsApp Inquiry</span>
-            </a>
+            </motion.a>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 rounded-xl text-slate-700 hover:bg-slate-100 transition-colors"
-            aria-label="Toggle Navigation"
+            className="lg:hidden p-2 rounded-full text-slate-700 hover:bg-[#FFF0E6] transition-colors"
+            aria-label="Toggle Navigation Menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? <X className="w-6 h-6 text-[#FF5A00]" /> : <Menu className="w-6 h-6" />}
           </button>
-        </div>
+        </motion.nav>
 
         {/* Mobile Dropdown Drawer */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 space-y-3 shadow-xl animate-in slide-in-from-top duration-200">
-            <div className="grid grid-cols-2 gap-2 pt-2 pb-3 border-b border-slate-100">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-brand-50 hover:text-brand-600 border border-slate-100 transition-colors"
-                >
-                  {t(link.labelGu, link.labelEn)}
-                </a>
-              ))}
-            </div>
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: -10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: -10 }}
+              transition={{ duration: 0.2, ease: "easeInOut" }}
+              className="mt-2 bg-white/98 backdrop-blur-md rounded-3xl border border-[#F0E6D8] p-5 shadow-2xl space-y-3 pointer-events-auto"
+            >
+              <div className="grid grid-cols-2 gap-2 pb-3 border-b border-[#F0E6D8]">
+                {navLinks.map((link) => {
+                  const isActive = pathname === link.href;
+                  return (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`px-4 py-2.5 rounded-full text-xs font-extrabold transition-all border ${
+                        isActive
+                          ? "bg-[#FF5A00] text-white border-[#FF5A00] shadow-sm"
+                          : "text-slate-700 bg-[#FAF5ED] hover:bg-[#FFF0E6] border-[#F0E6D8]"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  );
+                })}
+              </div>
 
-            <div className="pt-2 flex flex-col gap-2">
-              <a
-                href={`https://wa.me/${CONTACT_INFO.whatsappNumber}?text=${encodeURIComponent("Hello HY-TECH, I would like to inquire about your services.")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-2 bg-emerald-600 text-white font-bold py-2.5 rounded-xl shadow text-sm"
-              >
-                <MessageSquare className="w-4 h-4" />
-                <span>Chat on WhatsApp</span>
-              </a>
-              <a
-                href={`tel:${CONTACT_INFO.phone.replace(/\s+/g, '')}`}
-                className="w-full flex items-center justify-center gap-2 bg-navy-900 text-white font-bold py-2.5 rounded-xl text-sm"
-              >
-                <Phone className="w-4 h-4 text-brand-500" />
-                <span>Call Us: {CONTACT_INFO.displayPhone}</span>
-              </a>
-            </div>
-          </div>
-        )}
-      </nav>
-    </header>
+              <div className="pt-1 flex flex-col gap-2">
+                <a
+                  href={`https://wa.me/${CONTACT_INFO.whatsappNumber}?text=${encodeURIComponent("Hello HY-TECH, I would like to inquire about your services.")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center gap-2 bg-[#FF5A00] text-white font-extrabold py-3 rounded-full shadow text-xs"
+                >
+                  <MessageSquare className="w-4 h-4" />
+                  <span>Chat on WhatsApp</span>
+                </a>
+                <a
+                  href={`tel:${CONTACT_INFO.phone.replace(/\s+/g, '')}`}
+                  className="w-full flex items-center justify-center gap-2 bg-[#0B132B] text-white font-extrabold py-3 rounded-full text-xs"
+                >
+                  <Phone className="w-4 h-4 text-[#FF5A00]" />
+                  <span>Call Us: {CONTACT_INFO.displayPhone}</span>
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
+    </motion.header>
   );
 };
