@@ -24,17 +24,17 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
   };
 
   const quickBadges = [
-    { icon: Zap, text: "Fast Service", color: "text-[#FF5A00] bg-[#FFF0E6] border-[#FFD8C2]" },
-    { icon: ShieldCheck, text: "100% Reliable", color: "text-blue-700 bg-blue-50 border-blue-200" },
-    { icon: HeartHandshake, text: "Affordable Rates", color: "text-emerald-700 bg-emerald-50 border-emerald-200" },
-    { icon: Smile, text: "Customer First", color: "text-purple-700 bg-purple-50 border-purple-200" },
+    { icon: Zap, text: "Fast Service", color: "text-orange-600 bg-orange-50 border-orange-200" },
+    { icon: ShieldCheck, text: "100% Reliable", color: "text-blue-600 bg-blue-50 border-blue-200" },
+    { icon: HeartHandshake, text: "Affordable Rates", color: "text-emerald-600 bg-emerald-50 border-emerald-200" },
+    { icon: Smile, text: "Customer First", color: "text-purple-600 bg-purple-50 border-purple-200" },
   ];
 
   return (
-    <section id="hero" className="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-[#FAF5ED] text-[#0B132B] overflow-hidden">
-      {/* Veeba Soft Warm Ambient Background Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-[#FF5A00]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
+    <section id="hero" className="relative pt-32 pb-16 md:pt-40 md:pb-24 bg-gradient-to-b from-slate-50 via-white to-slate-100 text-[#0F172A] overflow-hidden border-b border-slate-200/80">
+      {/* Subtle Background Lighting */}
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-[450px] h-[450px] bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-center">
@@ -46,19 +46,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="lg:col-span-7 space-y-6 text-center lg:text-left"
           >
-            {/* Veeba Coral Pill Tagline */}
+            {/* Tagline Pill */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#FFF0E6] border border-[#FFD8C2] text-[#FF5A00] text-xs font-extrabold shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange-50 border border-orange-200 text-[#FF5A00] text-xs font-extrabold shadow-xs"
             >
               <Sparkles className="w-4 h-4 text-[#FF5A00] animate-pulse" />
               <span>Dharampur&apos;s #1 Digital Service & Computer Education Hub</span>
             </motion.div>
 
             {/* Headline */}
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-[#0B132B]">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight text-[#0F172A]">
               <span className="block">HY-TECH</span>
               <span className="block text-[#FF5A00] mt-1">
                 All Online Services & Computer Education Under One Roof
@@ -70,16 +70,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
               Aadhaar updates, PAN card, Voter ID, Ayushman Bharat, Shree Vanraj College Dharampur forms, Job applications, and CCC/Tally Computer Courses.
             </p>
 
-            {/* Veeba Floating Search Pill */}
+            {/* Floating Search Pill */}
             <form onSubmit={handleSearchSubmit} className="max-w-xl mx-auto lg:mx-0 relative">
-              <div className="relative flex items-center bg-white rounded-full p-2 border border-[#F0E6D8] shadow-lg">
+              <div className="relative flex items-center bg-white rounded-full p-2 border border-slate-200 shadow-xl">
                 <Search className="ml-4 w-5 h-5 text-[#FF5A00]" />
                 <input
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   placeholder="Search any service or course (e.g. Aadhaar, PAN, CCC)..."
-                  className="w-full pl-3 pr-28 py-3 bg-transparent text-[#0B132B] placeholder-slate-400 text-sm font-medium focus:outline-none"
+                  className="w-full pl-3 pr-28 py-3 bg-transparent text-[#0F172A] placeholder-slate-400 text-sm font-medium focus:outline-none"
                 />
                 <motion.button
                   whileHover={{ scale: 1.05 }}
@@ -93,12 +93,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
               </div>
             </form>
 
-            {/* Veeba Action Buttons */}
+            {/* Action Buttons */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2">
               <motion.a
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.96 }}
-                href="#services"
+                href="/services"
                 className="px-8 py-4 bg-[#FF5A00] hover:bg-[#E04F00] text-white font-extrabold rounded-full shadow-lg text-sm flex items-center gap-2 transition-all shadow-[#FF5A00]/25"
               >
                 <span>Explore All Services</span>
@@ -109,7 +109,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.96 }}
                 href={`tel:${CONTACT_INFO.phone.replace(/\s+/g, '')}`}
-                className="px-7 py-4 bg-white hover:bg-[#FFF0E6] border border-[#F0E6D8] text-[#0B132B] font-bold rounded-full text-sm flex items-center gap-2 transition-all shadow-sm"
+                className="px-7 py-4 bg-white hover:bg-slate-50 border border-slate-200 text-[#0F172A] font-bold rounded-full text-sm flex items-center gap-2 transition-all shadow-sm"
               >
                 <PhoneCall className="w-4 h-4 text-[#FF5A00]" />
                 <span>Call Now: {CONTACT_INFO.displayPhone}</span>
@@ -117,18 +117,18 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
             </div>
           </motion.div>
 
-          {/* Right Column: Veeba Card with Floating Badges */}
+          {/* Right Column: Visual Card with Floating Badges */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             className="lg:col-span-5 relative"
           >
-            {/* Edunex Floating Badge 1: Rating Pill */}
+            {/* Floating Rating Badge */}
             <motion.div
               animate={{ y: [0, -6, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="absolute -top-6 -right-4 z-20 bg-white text-[#0B132B] px-4 py-2.5 rounded-full shadow-xl border border-[#F0E6D8] flex items-center gap-2.5"
+              className="absolute -top-6 -right-4 z-20 bg-white text-[#0F172A] px-4 py-2.5 rounded-full shadow-xl border border-slate-200 flex items-center gap-2.5"
             >
               <div className="p-1.5 rounded-full bg-amber-100 text-amber-600">
                 <Star className="w-4 h-4 fill-amber-500 text-amber-500" />
@@ -139,27 +139,27 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
               </div>
             </motion.div>
 
-            {/* Edunex Floating Badge 2: Student Count Pill */}
+            {/* Floating Student Count Badge */}
             <motion.div
               animate={{ y: [0, 6, 0] }}
               transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-6 -left-6 z-20 bg-[#0B132B] text-white px-5 py-3 rounded-full shadow-xl border border-[#0B132B] flex items-center gap-3"
+              className="absolute -bottom-6 -left-6 z-20 bg-[#0F172A] text-white px-5 py-3 rounded-full shadow-xl border border-slate-800 flex items-center gap-3"
             >
               <div className="p-2 rounded-full bg-[#FF5A00] text-white">
                 <Users className="w-4 h-4" />
               </div>
               <div>
                 <p className="text-xs font-extrabold leading-none">1,200+ Students</p>
-                <p className="text-[10px] text-[#FFD8C2] mt-0.5">Trained in Dharampur</p>
+                <p className="text-[10px] text-slate-300 mt-0.5">Trained in Dharampur</p>
               </div>
             </motion.div>
 
-            {/* Veeba Main Visual Card (32px Curves) */}
-            <div className="relative rounded-[32px] bg-white border border-[#F0E6D8] p-7 md:p-9 shadow-2xl">
+            {/* Main Visual Showcase Card */}
+            <div className="relative rounded-[32px] bg-white border border-slate-200 p-7 md:p-9 shadow-2xl">
               
-              <div className="flex items-center justify-between border-b border-[#F0E6D8] pb-4 mb-6">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-4 mb-6">
                 <div>
-                  <h3 className="text-xl font-black text-[#0B132B] flex items-center gap-2">
+                  <h3 className="text-xl font-black text-[#0F172A] flex items-center gap-2">
                     <GraduationCap className="w-6 h-6 text-[#FF5A00]" />
                     <span>HY-TECH COMPUTER HUB</span>
                   </h3>
@@ -185,10 +185,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
                   <motion.div
                     key={idx}
                     whileHover={{ x: 5 }}
-                    className="flex items-center gap-3 p-3 rounded-2xl bg-[#FAF5ED] border border-[#F0E6D8] hover:border-[#FF5A00]/40 transition-colors"
+                    className="flex items-center gap-3 p-3 rounded-2xl bg-slate-50 border border-slate-100 hover:border-[#FF5A00]/40 transition-colors"
                   >
                     <CheckCircle2 className="w-5 h-5 text-[#FF5A00] shrink-0" />
-                    <span className="text-xs sm:text-sm font-bold text-[#0B132B]">
+                    <span className="text-xs sm:text-sm font-bold text-[#0F172A]">
                       {item}
                     </span>
                   </motion.div>
@@ -196,9 +196,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
               </div>
 
               {/* Contact Info Footer */}
-              <div className="mt-6 pt-4 border-t border-[#F0E6D8] flex items-center justify-between text-xs">
+              <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs">
                 <div>
-                  <p className="font-extrabold text-[#0B132B]">{CONTACT_INFO.contactPerson}</p>
+                  <p className="font-extrabold text-[#0F172A]">{CONTACT_INFO.contactPerson}</p>
                   <p className="text-slate-500">Proprietor</p>
                 </div>
                 <a
@@ -213,7 +213,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
 
         </div>
 
-        {/* Four Trust Badges matching Veeba Pastel Pill Cards */}
+        {/* Four Trust Badges */}
         <div className="mt-16 grid grid-cols-2 lg:grid-cols-4 gap-4">
           {quickBadges.map((badge, idx) => {
             const IconComp = badge.icon;
@@ -224,13 +224,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * idx + 0.3 }}
                 whileHover={{ scale: 1.03, y: -2 }}
-                className="flex items-center gap-3.5 p-4 rounded-3xl bg-white border border-[#F0E6D8] shadow-sm hover:shadow-md transition-all"
+                className="flex items-center gap-3.5 p-4 rounded-3xl bg-white border border-slate-200/90 shadow-sm hover:shadow-md transition-all"
               >
                 <div className={`p-3 rounded-2xl ${badge.color} border shrink-0`}>
                   <IconComp className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs sm:text-sm font-extrabold text-[#0B132B]">
+                  <h4 className="text-xs sm:text-sm font-extrabold text-[#0F172A]">
                     {badge.text}
                   </h4>
                   <p className="text-[11px] text-slate-500 font-medium">HY-TECH Guarantee</p>
@@ -241,13 +241,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
         </div>
 
         {/* Stats Counter Bar */}
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-[#F0E6D8] text-center">
+        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 pt-8 border-t border-slate-200 text-center">
           {STATS.map((stat, idx) => (
             <div key={idx} className="space-y-1">
               <div className="text-3xl sm:text-4xl font-black text-[#FF5A00]">
                 {stat.value}
               </div>
-              <div className="text-xs font-extrabold text-[#0B132B] uppercase tracking-wider">
+              <div className="text-xs font-extrabold text-[#0F172A] uppercase tracking-wider">
                 {stat.labelEn}
               </div>
             </div>
@@ -258,4 +258,5 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onSearch }) => {
     </section>
   );
 };
+
 
