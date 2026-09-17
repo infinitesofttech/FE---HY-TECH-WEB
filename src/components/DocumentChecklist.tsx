@@ -124,7 +124,7 @@ export const DocumentChecklist: React.FC = () => {
             <FileCheck className="w-3.5 h-3.5" />
             <span>{t("નાગરિક માર્ગદર્શન", "Citizen Guidance")}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-navy-950 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1E1B4B] tracking-tight">
             {t("સાથે લાવવાના જરૂરી ડોક્યુમેન્ટ્સ ચકાસો", "Check Required Documents Before Visiting")}
           </h2>
           <p className="text-slate-600 text-sm">
@@ -156,7 +156,7 @@ export const DocumentChecklist: React.FC = () => {
         <div className="max-w-3xl mx-auto bg-gradient-to-br from-emerald-50/80 via-white to-slate-50 rounded-3xl p-6 sm:p-8 border border-emerald-200 shadow-xl">
           <div className="flex items-center justify-between border-b border-emerald-200/80 pb-4 mb-6">
             <div>
-              <h3 className="text-xl font-extrabold text-navy-950">
+              <h3 className="text-xl font-extrabold text-[#1E1B4B]">
                 {t(selectedPreset.titleGu, selectedPreset.titleEn)}
               </h3>
               <p className="text-xs text-emerald-700 font-semibold mt-0.5">

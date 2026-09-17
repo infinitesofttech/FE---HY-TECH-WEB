@@ -283,7 +283,7 @@ export const SERVICES_DATA: ServiceCategory[] = [
     titleGu: "Computer Courses & Training",
     titleEn: "Computer Courses & Training",
     iconName: "Monitor",
-    color: "from-orange-500 to-red-600",
+    color: "from-indigo-600 to-indigo-800",
     items: [
       {
         id: "ccc-course",

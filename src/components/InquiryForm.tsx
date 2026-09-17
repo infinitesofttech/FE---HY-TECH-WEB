@@ -25,14 +25,14 @@ export const InquiryForm: React.FC = () => {
   };
 
   return (
-    <section id="inquiry" className="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <section id="inquiry" className="py-20 bg-[#1E1B4B] text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="grid lg:grid-cols-12 gap-12 items-center">
           
           {/* Left Text Column */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/20 text-brand-300 border border-brand-500/30 text-xs font-bold">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/20 text-[#818CF8] border border-indigo-500/30 text-xs font-bold">
               <Sparkles className="w-4 h-4 text-amber-400" />
               <span>{t("ત્વરિત ઓનલાઈન ઇન્ક્વાયરી", "Instant Online Inquiry")}</span>
             </div>
@@ -41,7 +41,7 @@ export const InquiryForm: React.FC = () => {
               {t("ઘેર બેઠા ઓનલાઈન સેવા અથવા કમ્પ્યુટર ક્લાસ માટે સંપર્ક કરો", "Inquire Online for Any Service or Computer Class")}
             </h2>
 
-            <p className="text-slate-300 text-sm leading-relaxed">
+            <p className="text-indigo-200/80 text-sm leading-relaxed">
               {t(
                 "તમારી વિગતો અહીં ભરો અને સીધો વોટ્સએપ પર મેસેજ મોકલો. અમારી ટીમ તમને ત્વરિત માર્ગદર્શન અને માહિતી આપશે.",
                 "Fill out your details below to instantly connect with our Dharampur team on WhatsApp."
@@ -55,22 +55,22 @@ export const InquiryForm: React.FC = () => {
                 { titleGu: "ન્યૂનતમ સર્વિસ ચાર્જ ગેરંટી", titleEn: "Affordable Transparent Charges" },
               ].map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3">
-                  <div className="p-1 rounded-full bg-brand-500/20 text-brand-400">
+                  <div className="p-1 rounded-full bg-indigo-500/20 text-[#818CF8]">
                     <CheckCircle2 className="w-5 h-5" />
                   </div>
-                  <span className="text-sm font-semibold text-slate-200">
+                  <span className="text-sm font-semibold text-indigo-100">
                     {t(item.titleGu, item.titleEn)}
                   </span>
                 </div>
               ))}
             </div>
 
-            <div className="pt-4 flex items-center gap-4 border-t border-slate-800">
+            <div className="pt-4 flex items-center gap-4 border-t border-indigo-900/60">
               <a
                 href={`tel:${CONTACT_INFO.phone.replace(/\s+/g, '')}`}
                 className="flex items-center gap-3 text-amber-400 hover:underline font-mono text-lg font-bold"
               >
-                <PhoneCall className="w-5 h-5 text-brand-500" />
+                <PhoneCall className="w-5 h-5 text-[#818CF8]" />
                 <span>{CONTACT_INFO.displayPhone}</span>
               </a>
             </div>
@@ -78,10 +78,10 @@ export const InquiryForm: React.FC = () => {
 
           {/* Right Form Card */}
           <div className="lg:col-span-6">
-            <div className="bg-navy-950 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative">
+            <div className="bg-[#312E81]/50 border border-indigo-500/30 rounded-3xl p-6 sm:p-8 shadow-2xl relative">
               
               <h3 className="text-xl font-extrabold text-white mb-6 flex items-center gap-2">
-                <MessageSquare className="w-5 h-5 text-brand-500" />
+                <MessageSquare className="w-5 h-5 text-[#818CF8]" />
                 <span>{t("ઓનલાઈન ફોર્મ ઇન્ક્વાયરી", "Online Inquiry Form")}</span>
               </h3>
 
@@ -93,12 +93,12 @@ export const InquiryForm: React.FC = () => {
                   <h4 className="text-lg font-bold text-white">
                     {t("તમારો મેસેજ વોટ્સએપ પર મોકલી દેવાયો છે!", "Inquiry sent to WhatsApp!")}
                   </h4>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs text-indigo-200">
                     {t("અમે ટૂંક સમયમાં તમારો સંપર્ક કરીશું.", "We will respond to your query shortly.")}
                   </p>
                   <button
                     onClick={() => setSubmitted(false)}
-                    className="px-6 py-2.5 bg-slate-800 hover:bg-slate-700 text-xs font-bold rounded-xl text-slate-200"
+                    className="px-6 py-2.5 bg-indigo-900/60 hover:bg-indigo-900 text-xs font-bold rounded-xl text-indigo-100"
                   >
                     {t("નવો મેસેજ મોકલો", "Send Another Message")}
                   </button>
@@ -106,7 +106,7 @@ export const InquiryForm: React.FC = () => {
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">
+                    <label className="block text-xs font-semibold text-indigo-200 mb-1">
                       {t("તમારું પૂરું નામ (Full Name) *", "Full Name *")}
                     </label>
                     <input
@@ -115,12 +115,12 @@ export const InquiryForm: React.FC = () => {
                       value={fullName}
                       onChange={(e) => setFullName(e.target.value)}
                       placeholder={t("દા.ત. રમેશભાઈ પટેલ", "e.g. Ramesh Patel")}
-                      className="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-brand-500"
+                      className="w-full px-4 py-3 bg-[#1E1B4B] border border-indigo-500/30 rounded-xl text-white text-sm focus:outline-none focus:border-[#4F46E5]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">
+                    <label className="block text-xs font-semibold text-indigo-200 mb-1">
                       {t("મોબાઈલ નંબર (Mobile Number) *", "Mobile Number *")}
                     </label>
                     <input
@@ -129,18 +129,18 @@ export const InquiryForm: React.FC = () => {
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       placeholder={t("દા.ત. 98250 12345", "e.g. 98250 12345")}
-                      className="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-brand-500"
+                      className="w-full px-4 py-3 bg-[#1E1B4B] border border-indigo-500/30 rounded-xl text-white text-sm focus:outline-none focus:border-[#4F46E5]"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">
+                    <label className="block text-xs font-semibold text-indigo-200 mb-1">
                       {t("જરૂરી સેવા પસંદ કરો (Select Service)", "Select Interested Service")}
                     </label>
                     <select
                       value={service}
                       onChange={(e) => setService(e.target.value)}
-                      className="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-brand-500"
+                      className="w-full px-4 py-3 bg-[#1E1B4B] border border-indigo-500/30 rounded-xl text-white text-sm focus:outline-none focus:border-[#4F46E5]"
                     >
                       <option value="">{t("-- સેવા પસંદ કરો --", "-- Select Service --")}</option>
                       <option value="Aadhaar Card Update">{t("આધાર કાર્ડ અપડેટ / મોબાઈલ લિંક", "Aadhaar Update & Mobile Link")}</option>
@@ -156,7 +156,7 @@ export const InquiryForm: React.FC = () => {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-semibold text-slate-300 mb-1">
+                    <label className="block text-xs font-semibold text-indigo-200 mb-1">
                       {t("સંદેશ અથવા વિગત (Message)", "Message / Details")}
                     </label>
                     <textarea
@@ -164,7 +164,7 @@ export const InquiryForm: React.FC = () => {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       placeholder={t("તમારો મેસેજ લખો...", "Write your question or details...")}
-                      className="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl text-white text-sm focus:outline-none focus:border-brand-500"
+                      className="w-full px-4 py-3 bg-[#1E1B4B] border border-indigo-500/30 rounded-xl text-white text-sm focus:outline-none focus:border-[#4F46E5]"
                     />
                   </div>
 

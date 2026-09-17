@@ -8,33 +8,33 @@
     font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   body {
-    background-color: #FAFAFA;
-    color: #111827;
+    background-color: #F8FAFC;
+    color: #1E1B4B;
     -webkit-font-smoothing: antialiased;
   }
 }
 
-/* Veeba Brand Gradients */
-.text-gradient-veeba {
+/* Rich Violet Indigo Gradients */
+.text-gradient-indigo {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  background-image: linear-gradient(135deg, #E31B23 0%, #FF5A00 100%);
+  background-image: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
 }
 
-.text-gradient-dark {
+.text-gradient-amber {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  background-image: linear-gradient(135deg, #111827 0%, #374151 100%);
+  background-image: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
 }
 
-/* Veeba Floating Cards & Glass */
-.glass-veeba-card {
+/* Glassmorphism */
+.glass-indigo-card {
   background: rgba(255, 255, 255, 0.98);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid #E5E7EB;
+  border: 1px solid #E0E7FF;
 }
 
 /* Custom Scrollbar */
@@ -44,16 +44,17 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #F3F4F6;
+  background: #EEF2FF;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D1D5DB;
+  background: #C7D2FE;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #E31B23;
+  background: #4F46E5;
 }
+
 
 

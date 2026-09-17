@@ -15,14 +15,14 @@ export const ContactSection: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wider">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 text-[#4F46E5] text-xs font-bold uppercase tracking-wider border border-indigo-200">
             <MapPin className="w-3.5 h-3.5" />
             <span>{t("અમારું સરનામું અને સંપર્ક", "Contact & Location")}</span>
           </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-navy-950 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-black text-[#1E1B4B] tracking-tight">
             {t("HY-TECH સેવા કેન્દ્ર ધરમપુર ખાતે પધારો", "Visit HY-TECH Digital Hub Dharampur")}
           </h2>
-          <p className="text-slate-600 text-sm">
+          <p className="text-slate-600 text-sm font-medium">
             {t(
               "અમારા શોપ પર આવીને રૂબરૂ સેવાઓ મેળવો અથવા કોઈપણ માહિતી માટે સીધો ફોન કરો.",
               "Visit our shop in Dharampur or contact us via phone/WhatsApp for immediate assistance."
@@ -34,11 +34,11 @@ export const ContactSection: React.FC = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           
           {/* Address Card */}
-          <div className="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-lg transition-all duration-300 space-y-3">
-            <div className="w-12 h-12 rounded-2xl bg-brand-100 text-brand-600 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-[32px] border border-slate-200/80 shadow-sm hover:shadow-lg transition-all duration-300 space-y-3">
+            <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-[#4F46E5] border border-indigo-100 flex items-center justify-center">
               <MapPin className="w-6 h-6" />
             </div>
-            <h3 className="text-base font-bold text-navy-950">
+            <h3 className="text-base font-extrabold text-[#1E1B4B]">
               {t("મુલાકાતનું સરનામું", "Shop Address")}
             </h3>
             <p className="text-xs text-slate-600 leading-relaxed font-medium">
@@ -48,7 +48,7 @@ export const ContactSection: React.FC = () => {
               href={mapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-600 hover:underline pt-2"
+              className="inline-flex items-center gap-1.5 text-xs font-bold text-[#4F46E5] hover:underline pt-2"
             >
               <Navigation className="w-3.5 h-3.5" />
               <span>{t("ગુગલ મેપ પર જુઓ", "View on Google Maps")}</span>
@@ -57,17 +57,17 @@ export const ContactSection: React.FC = () => {
           </div>
 
           {/* Call / WhatsApp Card */}
-          <div className="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-lg transition-all duration-300 space-y-3">
-            <div className="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-[32px] border border-slate-200/80 shadow-sm hover:shadow-lg transition-all duration-300 space-y-3">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 border border-emerald-100 flex items-center justify-center">
               <Phone className="w-6 h-6" />
             </div>
-            <h3 className="text-base font-bold text-navy-950">
+            <h3 className="text-base font-extrabold text-[#1E1B4B]">
               {t("ફોન નંબર & વોટ્સએપ", "Phone & WhatsApp")}
             </h3>
             <div className="space-y-1">
               <a
                 href={`tel:${CONTACT_INFO.phone.replace(/\s+/g, '')}`}
-                className="text-sm font-extrabold text-navy-950 hover:text-brand-600 block"
+                className="text-sm font-extrabold text-[#1E1B4B] hover:text-[#4F46E5] block"
               >
                 {CONTACT_INFO.displayPhone}
               </a>
@@ -79,16 +79,16 @@ export const ContactSection: React.FC = () => {
           </div>
 
           {/* Email Card */}
-          <div className="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-lg transition-all duration-300 space-y-3">
-            <div className="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-[32px] border border-slate-200/80 shadow-sm hover:shadow-lg transition-all duration-300 space-y-3">
+            <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-[#4F46E5] border border-indigo-100 flex items-center justify-center">
               <Mail className="w-6 h-6" />
             </div>
-            <h3 className="text-base font-bold text-navy-950">
+            <h3 className="text-base font-extrabold text-[#1E1B4B]">
               {t("ઈમેઈલ આઈડી", "Email Address")}
             </h3>
             <a
               href={`mailto:${CONTACT_INFO.email}`}
-              className="text-xs font-semibold text-slate-700 hover:text-brand-600 block truncate"
+              className="text-xs font-semibold text-slate-700 hover:text-[#4F46E5] block truncate"
             >
               {CONTACT_INFO.email}
             </a>
@@ -98,11 +98,11 @@ export const ContactSection: React.FC = () => {
           </div>
 
           {/* Instagram Card */}
-          <div className="bg-white p-6 rounded-3xl border border-slate-200/80 shadow-sm hover:shadow-lg transition-all duration-300 space-y-3">
-            <div className="w-12 h-12 rounded-2xl bg-pink-100 text-pink-600 flex items-center justify-center">
+          <div className="bg-white p-6 rounded-[32px] border border-slate-200/80 shadow-sm hover:shadow-lg transition-all duration-300 space-y-3">
+            <div className="w-12 h-12 rounded-2xl bg-pink-50 text-pink-600 border border-pink-100 flex items-center justify-center">
               <Instagram className="w-6 h-6" />
             </div>
-            <h3 className="text-base font-bold text-navy-950">
+            <h3 className="text-base font-extrabold text-[#1E1B4B]">
               {t("ઈન્સ્ટાગ્રામ પેજ", "Instagram Profile")}
             </h3>
             <a
@@ -121,14 +121,14 @@ export const ContactSection: React.FC = () => {
         </div>
 
         {/* Working Hours Bar */}
-        <div className="bg-navy-950 rounded-2xl p-6 text-white flex flex-wrap items-center justify-between gap-4 border border-navy-800">
+        <div className="bg-[#1E1B4B] rounded-[32px] p-6 text-white flex flex-wrap items-center justify-between gap-4 border border-indigo-900/60 shadow-xl">
           <div className="flex items-center gap-3">
             <Clock className="w-6 h-6 text-amber-400" />
             <div>
               <h4 className="text-sm font-bold text-white">
                 {t("શોપ કામગીરીનો સમય (Working Hours)", "Shop Working Hours")}
               </h4>
-              <p className="text-xs text-slate-300">
+              <p className="text-xs text-indigo-200">
                 {t(CONTACT_INFO.workingHoursGu, CONTACT_INFO.workingHoursEn)}
               </p>
             </div>
@@ -136,7 +136,7 @@ export const ContactSection: React.FC = () => {
 
           <a
             href={`tel:${CONTACT_INFO.phone.replace(/\s+/g, '')}`}
-            className="px-5 py-2.5 bg-brand-500 hover:bg-brand-600 text-white font-bold rounded-xl text-xs transition-all shadow-md"
+            className="px-6 py-3 bg-[#4F46E5] hover:bg-[#4338CA] text-white font-extrabold rounded-full text-xs transition-all shadow-md"
           >
             {t("હમણાં જ કોલ કરો", "Call Now")}
           </a>

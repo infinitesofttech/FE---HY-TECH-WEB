@@ -9,24 +9,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        veeba: {
-          red: '#E31B23',       // Iconic Veeba Brand Red
-          redHover: '#C8141B',
-          redLight: '#FEE2E2',   // Soft Red Tint
-          orange: '#FF5A00',
-          dark: '#111827',      // Deep Charcoal Header & Text
-          charcoal: '#1E293B',
-          grayText: '#4B5563',
-          border: '#E5E7EB',    // Clean subtle border
-          bgLight: '#F9FAFB',   // Light gray background
+        indigoBrand: {
+          50: '#eef2ff',
+          100: '#e0e7ff',
+          200: '#c7d2fe',
+          300: '#a5b4fc',
+          400: '#818cf8',
+          500: '#6366f1',
+          600: '#4f46e5', // Primary Rich Violet Indigo
+          700: '#4338ca', // Hover Indigo
+          800: '#3730a3',
+          900: '#312e81',
+          950: '#1e1b4b', // Deep Dark Navy Indigo
         },
-        brand: {
-          50: '#fef2f2',
-          100: '#FEE2E2',
-          200: '#fca5a5',
-          500: '#E31B23',
-          600: '#C8141B',
-          700: '#991b1b',
+        amberBrand: {
+          50: '#fffbeb',
+          100: '#fef3c7',
+          200: '#fde68a',
+          500: '#f59e0b',
+          600: '#d97706',
         }
       },
       fontFamily: {
@@ -36,10 +37,8 @@ const config: Config = {
         'veeba': '32px',
       },
       boxShadow: {
-        'veeba': '0 12px 35px -8px rgba(0, 0, 0, 0.06)',
-        'veeba-hover': '0 20px 45px -10px rgba(227, 27, 35, 0.18)',
-        'veeba-pill': '0 10px 25px -5px rgba(0, 0, 0, 0.08)',
-        'glow-red': '0 10px 30px -5px rgba(227, 27, 35, 0.35)',
+        'indigo-pill': '0 10px 25px -5px rgba(79, 70, 229, 0.25)',
+        'glow-indigo': '0 10px 30px -5px rgba(79, 70, 229, 0.35)',
       }
     },
   },
@@ -47,3 +46,4 @@ const config: Config = {
 };
 
 export default config;
+
