@@ -33,7 +33,7 @@ export default function Home() {
   const popularServices = SERVICES_DATA.flatMap((cat) => cat.items).slice(0, 6);
 
   return (
-    <main className="min-h-screen bg-slate-50 text-[#0F172A] selection:bg-[#FF5A00] selection:text-white">
+    <main className="min-h-screen bg-[#F5F7FA] text-[#0F1322] selection:bg-[#5751E1] selection:text-white">
       <Header />
       <HeroSection onSearch={handleHeroSearch} />
 
@@ -41,10 +41,10 @@ export default function Home() {
       <section className="py-16 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-extrabold text-[#FF5A00] uppercase tracking-wider bg-orange-50 px-4 py-1.5 rounded-full border border-orange-200">
+            <span className="text-xs font-extrabold text-[#5751E1] uppercase tracking-wider bg-[#EEEEFF] px-4 py-1.5 rounded-full border border-[#C5C5FF]">
               Explore Our Hub
             </span>
-            <h2 className="text-3xl font-black text-[#0F172A] mt-3">
+            <h2 className="text-3xl sm:text-4xl font-black text-[#0F1322] mt-3">
               What We Offer at HY-TECH Dharampur
             </h2>
             <p className="text-slate-600 text-sm mt-2 font-medium">
@@ -60,7 +60,7 @@ export default function Home() {
                 href: "/services",
                 icon: Globe,
                 badge: "30+ Services",
-                color: "bg-blue-50 text-blue-600 border-blue-200"
+                color: "bg-[#EEEEFF] text-[#5751E1] border-[#C5C5FF]"
               },
               {
                 title: "Computer Classes",
@@ -68,7 +68,7 @@ export default function Home() {
                 href: "/courses",
                 icon: Monitor,
                 badge: "Practical Training",
-                color: "bg-orange-50 text-[#FF5A00] border-orange-200"
+                color: "bg-[#FFFBEB] text-[#D97706] border-[#FDE68A]"
               },
               {
                 title: "College Forms & Admission",
@@ -104,7 +104,7 @@ export default function Home() {
                       </span>
                     </div>
                     <div>
-                      <h3 className="text-lg font-extrabold text-[#0F172A]">{card.title}</h3>
+                      <h3 className="text-lg font-extrabold text-[#0F1322]">{card.title}</h3>
                       <p className="text-xs text-slate-600 mt-1.5 leading-relaxed font-medium">
                         {card.desc}
                       </p>
@@ -114,10 +114,10 @@ export default function Home() {
                   <div className="mt-6 pt-4 border-t border-slate-100">
                     <Link
                       href={card.href}
-                      className="w-full py-2.5 px-4 bg-slate-900 hover:bg-[#FF5A00] text-white font-extrabold rounded-full text-xs transition-all flex items-center justify-center gap-2 group shadow-sm"
+                      className="w-full py-2.5 px-4 bg-[#0F1322] hover:bg-[#5751E1] text-white font-extrabold rounded-full text-xs transition-all flex items-center justify-center gap-2 group shadow-sm"
                     >
                       <span>Open Page</span>
-                      <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                      <ArrowRight className="w-4 h-4 text-[#FFC224] transform group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
                 </motion.div>
@@ -128,27 +128,27 @@ export default function Home() {
       </section>
 
       {/* 2. Popular Services Preview */}
-      <section className="py-20 bg-slate-50 border-b border-slate-200">
+      <section className="py-20 bg-[#F5F7FA] border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
-              <span className="text-xs font-extrabold text-[#FF5A00] uppercase tracking-wider bg-orange-50 px-4 py-1.5 rounded-full border border-orange-200">
+              <span className="text-xs font-extrabold text-[#5751E1] uppercase tracking-wider bg-[#EEEEFF] px-4 py-1.5 rounded-full border border-[#C5C5FF]">
                 Popular Services
               </span>
-              <h2 className="text-3xl font-black text-[#0F172A] mt-3">
+              <h2 className="text-3xl font-black text-[#0F1322] mt-3">
                 Most Requested Online Services
               </h2>
             </div>
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF5A00] hover:bg-[#E04F00] text-white font-extrabold rounded-full text-xs shadow-md transition-all shrink-0"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#5751E1] hover:bg-[#4338CA] text-white font-extrabold rounded-full text-xs shadow-md transition-all shrink-0"
             >
               <span>View All 30+ Services Directory →</span>
             </Link>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {popularServices.map((service, idx) => (
+            {popularServices.map((service) => (
               <motion.div
                 key={service.id}
                 whileHover={{ y: -4 }}
@@ -156,11 +156,11 @@ export default function Home() {
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-[10px] font-extrabold bg-orange-50 text-[#FF5A00] px-3 py-1 rounded-full border border-orange-200">
+                    <span className="text-[10px] font-extrabold bg-[#FFFBEB] text-[#D97706] px-3 py-1 rounded-full border border-[#FDE68A]">
                       {service.badgeEn || "Verified"}
                     </span>
                   </div>
-                  <h3 className="text-base font-extrabold text-[#0F172A]">
+                  <h3 className="text-base font-extrabold text-[#0F1322]">
                     {service.titleEn}
                   </h3>
                   <p className="text-xs text-slate-600 mt-2 line-clamp-2 leading-relaxed font-medium">
@@ -168,7 +168,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-extrabold text-[#FF5A00]">
+                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-extrabold text-[#5751E1]">
                   <Link href="/services" className="hover:underline flex items-center gap-1">
                     <span>Read Documents Required</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -181,11 +181,11 @@ export default function Home() {
       </section>
 
       {/* 3. Featured Computer Courses Preview */}
-      <section className="py-20 bg-[#0F172A] text-white">
+      <section className="py-20 bg-[#0F1322] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
-              <span className="text-xs font-extrabold text-[#FF5A00] uppercase tracking-wider bg-white/10 px-4 py-1.5 rounded-full border border-white/20">
+              <span className="text-xs font-extrabold text-[#FFC224] uppercase tracking-wider bg-white/10 px-4 py-1.5 rounded-full border border-white/20">
                 Computer Classes
               </span>
               <h2 className="text-3xl sm:text-4xl font-black text-white mt-3">
@@ -194,7 +194,7 @@ export default function Home() {
             </div>
             <Link
               href="/courses"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#FF5A00] hover:bg-[#E04F00] text-white font-extrabold rounded-full text-xs shadow-lg transition-all shrink-0"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#FFC224] hover:bg-[#EAB308] text-[#0F1322] font-black rounded-full text-xs shadow-lg transition-all shrink-0"
             >
               <span>Explore All Computer Courses & Syllabus →</span>
             </Link>
@@ -204,14 +204,14 @@ export default function Home() {
             {COMPUTER_COURSES_LIST.map((course) => (
               <div
                 key={course.id}
-                className="bg-white/5 border border-white/10 rounded-[32px] p-6 flex flex-col justify-between hover:border-[#FF5A00]/60 transition-all"
+                className="bg-[#1A1F36] border border-slate-700/80 rounded-[32px] p-6 flex flex-col justify-between hover:border-[#5751E1] transition-all"
               >
                 <div className="space-y-3">
-                  <span className="text-[10px] font-extrabold bg-[#FF5A00] text-white px-3 py-1 rounded-full inline-block">
+                  <span className="text-[10px] font-black bg-[#FFC224] text-[#0F1322] px-3 py-1 rounded-full inline-block">
                     {course.badgeGu}
                   </span>
                   <h3 className="text-lg font-black text-white">{course.title}</h3>
-                  <div className="flex items-center gap-1.5 text-xs text-amber-400 font-extrabold">
+                  <div className="flex items-center gap-1.5 text-xs text-[#FFC224] font-extrabold">
                     <Clock className="w-3.5 h-3.5" />
                     <span>Duration: {course.duration}</span>
                   </div>
@@ -223,10 +223,10 @@ export default function Home() {
                 <div className="mt-6 pt-4 border-t border-white/10">
                   <Link
                     href="/courses"
-                    className="w-full py-2.5 bg-white/10 hover:bg-[#FF5A00] text-white font-extrabold rounded-full text-xs flex items-center justify-center gap-1.5 transition-all"
+                    className="w-full py-2.5 bg-[#5751E1] hover:bg-[#4338CA] text-white font-extrabold rounded-full text-xs flex items-center justify-center gap-1.5 transition-all"
                   >
                     <span>View Full Syllabus</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
+                    <ArrowRight className="w-3.5 h-3.5 text-[#FFC224]" />
                   </Link>
                 </div>
               </div>
@@ -239,40 +239,40 @@ export default function Home() {
       <section className="py-20 bg-white border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs font-extrabold text-[#FF5A00] uppercase tracking-wider bg-orange-50 px-4 py-1.5 rounded-full border border-orange-200">
+            <span className="text-xs font-extrabold text-[#5751E1] uppercase tracking-wider bg-[#EEEEFF] px-4 py-1.5 rounded-full border border-[#C5C5FF]">
               Why HY-TECH Dharampur
             </span>
-            <h2 className="text-3xl font-black text-[#0F172A] mt-3">
+            <h2 className="text-3xl font-black text-[#0F1322] mt-3">
               Trusted by 1,200+ Students & Citizens in Dharampur
             </h2>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-slate-50 p-8 rounded-[32px] border border-slate-200 text-center space-y-3">
-              <div className="w-12 h-12 bg-orange-100 text-[#FF5A00] rounded-2xl flex items-center justify-center mx-auto font-bold">
+            <div className="bg-[#F5F7FA] p-8 rounded-[32px] border border-slate-200 text-center space-y-3">
+              <div className="w-12 h-12 bg-[#EEEEFF] text-[#5751E1] rounded-2xl flex items-center justify-center mx-auto font-bold">
                 <ShieldCheck className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-extrabold text-[#0F172A]">100% Error-Free Processing</h3>
+              <h3 className="text-lg font-extrabold text-[#0F1322]">100% Error-Free Processing</h3>
               <p className="text-xs text-slate-600 leading-relaxed font-medium">
                 We carefully verify your document details before final submission to avoid rejection.
               </p>
             </div>
 
-            <div className="bg-slate-50 p-8 rounded-[32px] border border-slate-200 text-center space-y-3">
-              <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mx-auto font-bold">
+            <div className="bg-[#F5F7FA] p-8 rounded-[32px] border border-slate-200 text-center space-y-3">
+              <div className="w-12 h-12 bg-[#FFFBEB] text-[#D97706] rounded-2xl flex items-center justify-center mx-auto font-bold">
                 <Users className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-extrabold text-[#0F172A]">Individual Computer Attention</h3>
+              <h3 className="text-lg font-extrabold text-[#0F1322]">Individual Computer Attention</h3>
               <p className="text-xs text-slate-600 leading-relaxed font-medium">
                 Dedicated computer system for every student with hands-on practical learning.
               </p>
             </div>
 
-            <div className="bg-slate-50 p-8 rounded-[32px] border border-slate-200 text-center space-y-3">
+            <div className="bg-[#F5F7FA] p-8 rounded-[32px] border border-slate-200 text-center space-y-3">
               <div className="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center mx-auto font-bold">
                 <Award className="w-6 h-6" />
               </div>
-              <h3 className="text-lg font-extrabold text-[#0F172A]">Affordable & Fast Service</h3>
+              <h3 className="text-lg font-extrabold text-[#0F1322]">Affordable & Fast Service</h3>
               <p className="text-xs text-slate-600 leading-relaxed font-medium">
                 Fair transparent pricing for government forms, PVC smart card prints, and computer courses.
               </p>
@@ -286,4 +286,5 @@ export default function Home() {
     </main>
   );
 }
+
 
