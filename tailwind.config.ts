@@ -9,39 +9,37 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        edunex: {
-          violet: '#5751E1',       // Edunex Signature Indigo Violet
-          violetHover: '#4338CA',
-          violetLight: '#EEEEFF',  // Pastel Violet Tint
-          gold: '#FFC224',         // Edunex Signature Golden Amber Accent
-          goldHover: '#EAB308',
-          goldLight: '#FFFBEB',    // Soft Amber Tint
-          dark: '#0F1322',         // Edunex Deep Night Background
-          darkCard: '#1A1F36',     // Edunex Dark Card Surface
-          bg: '#F5F7FA',           // Soft Canvas
-          border: '#E2E8F0',
+        veeba: {
+          red: '#E31B23',       // Iconic Veeba Brand Red
+          redHover: '#C8141B',
+          redLight: '#FEE2E2',   // Soft Red Tint
+          orange: '#FF5A00',
+          dark: '#111827',      // Deep Charcoal Header & Text
+          charcoal: '#1E293B',
+          grayText: '#4B5563',
+          border: '#E5E7EB',    // Clean subtle border
+          bgLight: '#F9FAFB',   // Light gray background
         },
         brand: {
-          50: '#EEEEFF',
-          100: '#E0E0FF',
-          200: '#C5C5FF',
-          500: '#5751E1',
-          600: '#4338CA',
-          700: '#3730A3',
+          50: '#fef2f2',
+          100: '#FEE2E2',
+          200: '#fca5a5',
+          500: '#E31B23',
+          600: '#C8141B',
+          700: '#991b1b',
         }
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },
       borderRadius: {
-        'edunex': '24px',
-        'edunex-lg': '32px',
+        'veeba': '32px',
       },
       boxShadow: {
-        'edunex': '0 12px 35px -8px rgba(87, 81, 225, 0.08)',
-        'edunex-hover': '0 20px 45px -10px rgba(87, 81, 225, 0.22)',
-        'glow-violet': '0 10px 30px -5px rgba(87, 81, 225, 0.4)',
-        'glow-gold': '0 10px 30px -5px rgba(255, 194, 36, 0.4)',
+        'veeba': '0 12px 35px -8px rgba(0, 0, 0, 0.06)',
+        'veeba-hover': '0 20px 45px -10px rgba(227, 27, 35, 0.18)',
+        'veeba-pill': '0 10px 25px -5px rgba(0, 0, 0, 0.08)',
+        'glow-red': '0 10px 30px -5px rgba(227, 27, 35, 0.35)',
       }
     },
   },
@@ -49,4 +47,3 @@ const config: Config = {
 };
 
 export default config;
-
